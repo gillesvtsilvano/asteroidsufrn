@@ -1,0 +1,7 @@
+*.d
+*.o
+.depend
+.zcache
+TAGS
+.DS_Store
+Asteroids
