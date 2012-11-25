@@ -9,7 +9,7 @@
 #include "ship.h"
 
 #define STAR_SIZE      1.0
-#define NUM_ASTEROIDS  3
+#define NUM_ASTEROIDS  10
 #define TIMER_TICK     20
 #define MAX_BGND_STARS 500
 #define MAX_LIVES      3
@@ -178,7 +178,7 @@ void display()
     glClear(GL_COLOR_BUFFER_BIT);
 
     glMatrixMode(GL_MODELVIEW);
-
+   // draw_asteroids(&asteroids);
     draw_stars();
 
     if (game_over)
@@ -216,7 +216,7 @@ static void generate_asteroids()
         }
 
         get_rand_coords(&x, &y);
-        init_asteroid(tmp, x, y);
+        init_asteroid(tmp, x, y, i/3.2);
         list_add_tail(&tmp->list, &asteroids.list);
     }
 }
